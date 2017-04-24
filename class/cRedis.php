@@ -25,6 +25,10 @@ class ChessRedis {
 		return $this->Redis->hmset($key, $hashToSave) ;
 	}
 
+	function get($keyname) {
+		return $this->Redis->hgetall($keyname) ;
+	}
+
 	function batchSet($keyValuesList){
 		$responses = $this->Redis->pipeline() ;
 		foreach($keyValuesList as $key => $value){
