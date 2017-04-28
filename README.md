@@ -28,12 +28,12 @@ Cet exemple s'appuie sur une Debian 8, on a installé les paquets suivants insta
 - `libphp-predis`
 
 # Exercices
-1. Ajouter une propriété obligatoire aux objets Tower    
+1. *Ajouter une propriété obligatoire aux objets Tower*    
    Les classes ont déjà des propriétés `tower_type` ou `id`. On doit leur ajouter un rayon de non-constructibilité :    
    ellez auront besoin de ce rayon autour d'elles sans autre construction, et une fois construites elles empêcheront la construction à l'intérieur de ce rayon.    
    Ce "rayon d'empêchement" peut être exprimé en kilomètres    
 
-2. passer les coordonnées en type geo dans redis et coder les méthodes :    
+2. *Passer les coordonnées en type geo dans redis et coder les méthodes :*    
     - ChessRedis::addObjectLocation(object, lat, long) => booleen    
       La méthode qui ajoute dans Redis la position géo, en liant avec l'objet positionné    
       Elle peut prendre en arguments : l'objet (Tower par exemple), les positions géo lat / long    
@@ -56,12 +56,12 @@ Cet exemple s'appuie sur une Debian 8, on a installé les paquets suivants insta
       Elle peut éventuellement vérifier si la position ne viole pas les règles de rayon de non-constructibilité des autres constructions qui seraient en dehors du propre rayon de la Tower à construire    
       Elle doit renvoyer un booléen true/false en fonction du résultat du calcul    
     
-3. modifier les méthodes pour adapter aux nouvelles coordonnées    
+3. *Modifier les méthodes pour adapter aux nouvelles coordonnées*    
     - *Tower::addTower(lat,lon)    
       On ajoute maintenant une tour en donnant une position lat / lon    
       Les FireTower ont un rayon de 2km, les sniperTower de 1km
     
-4. récupérer tous ces points et les afficher sur une carto au choix    
+4. *Récupérer tous ces points et les afficher sur une carto au choix*    
     - Ajouter une méthode ChessRedis::getAllElements() qui renvoie une liste de (par exemple) array(type=>'SniperTower','id'=>'iddelobjet',lat=>45.22,long=>4.56), ...    
     avec autant d'arrays que d'éléments présents    
     
