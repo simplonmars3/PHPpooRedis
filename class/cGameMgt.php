@@ -12,7 +12,7 @@ class cGameMgt {
   private $redisCnx ;
 
   function __construct($boardSize = 8) {
-    echo 'Constructing...' ;
+    // echo 'Constructing...' ;
     $this->redisCnx         = new ChessRedis() ;
     $this->id               = uniqid() ;
     $this->dates['begin']   = new DateTime() ;

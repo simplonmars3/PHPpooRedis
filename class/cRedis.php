@@ -10,9 +10,12 @@ class ChessRedis {
 		if($this->Redis) return $this->Redis ;
 
 		try {
-			$this->Redis = new Predis\Client() ;
+			$this->Redis = new Predis\Client(array(
+				'scheme' => 'unix',
+				'path' => "/var/run/redis/redis.sock"
+		)) ;
 
-			echo 'Connected to Redis :)' ;
+			// echo 'Connected to Redis :)' ;
 
 		}
 		catch(Exception $e ) {
@@ -22,7 +25,7 @@ class ChessRedis {
 	}
 
 	function saveHash($key, $hashToSave) {
-		echo 'Savin hash !!!'. $key ;
+		// echo 'Savin hash !!!'. $key ;
 		return $this->Redis->hmset($key, $hashToSave) ;
 	}
 
