@@ -29,11 +29,12 @@ Cet exemple s'appuie sur une Debian 8, on a installé les paquets suivants insta
 
 # Exercices    
 
-Vous pouvez vous inspirer librement de la doc en ligne et des différents tuto trouvables en lignes, par exemple :
+Vous pouvez vous inspirer librement de la doc en ligne et des différents tutos trouvables en lignes, par exemple :
 - https://matt.sh/redis-geo
 - http://www.infoworld.com/article/3128306/application-development/build-geospatial-apps-with-redis.html
 - http://cristian.regolo.cc/2015/07/07/introducing-the-geo-api-in-redis.html
-- http://objectrocket.com/blog/company/redis-geo-tutorial
+- http://objectrocket.com/blog/company/redis-geo-tutorial    
+
 
 1. *Ajouter une propriété obligatoire aux objets Tower*    
    Les classes ont déjà des propriétés `tower_type` ou `id`. On doit leur ajouter un rayon de non-constructibilité :    
