@@ -69,7 +69,7 @@ Vous pouvez vous inspirer librement de la doc en ligne et des différents tutos 
       On ajoute maintenant une tour en donnant une position lat / lon    
       Les FireTower ont un rayon de 2km, les sniperTower de 1km
     
-4. **Récupérer tous ces points et les afficher sur une carto au choix**    
+4. **Récupérer tous ces points pour les afficher plus tard sur une carto au choix**    
     - Ajouter une méthode `ChessRedis::getAllElements()` qui renvoie une liste de (par exemple)    
       *array(
         type=>'SniperTower',
@@ -78,5 +78,8 @@ Vous pouvez vous inspirer librement de la doc en ligne et des différents tutos 
         long=>4.56)*, 
         ...    
     avec autant d'arrays que d'éléments présents    
+    
+    - Je vous laisse imaginer la suite, on passera en web et on ajoutera du joli à tout ça. Et des **contrôleurs**   
+    - *To be continued* ...
     
     
