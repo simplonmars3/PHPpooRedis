@@ -34,22 +34,22 @@ Cet exemple s'appuie sur une Debian 8, on a installé les paquets suivants insta
    Ce "rayon d'empêchement" peut être exprimé en kilomètres    
 
 2. *Passer les coordonnées en type geo dans redis et coder les méthodes :*    
-    - ChessRedis::addObjectLocation(object, lat, long) => booleen    
+    - `ChessRedis::addObjectLocation(object, lat, long)`    
       La méthode qui ajoute dans Redis la position géo, en liant avec l'objet positionné    
       Elle peut prendre en arguments : l'objet (Tower par exemple), les positions géo lat / long    
       Elle doit renvoyer un booleen indiquant le succès de l'écriture dans Redis    
       
-    - ChessRedis::getObjectLocation(id) => array/objet    
+    - `ChessRedis::getObjectLocation(id)`    
       La méthode qui renvoie les coordonnées d'un objet, par son id    
       Elle peut prendre en arguments : l'id de l'objet dont on veut les coordonnées    
       Elle doit renvoyer un array(long=>xxxx,lat=>yyyy)
       
-    - ChessRedis::getObjectsAroundLocation(lat, long, radius) => array/objet     
+    - `ChessRedis::getObjectsAroundLocation(lat, long, radius)`     
       La méthode qui renvoie la liste des objets présents autour d'une position, dans un rayon donné    
       Elle peut prendre en arguments : la position long/lat , le rayon voulu autour de cette position    
       Elle doit renvoyer un array d'objets divers (fireTower, sniperTower, ...) qui sont positionnés dans le cercle calculé    
       
-    - ChessRedis::locationIsConstructable(lat, long, radius) => booleen    
+    - `ChessRedis::locationIsConstructable(lat, long, radius)`    
       La méthode qui donne l'état de constructibilité pour une nouvelle construction ; une première version simple est facile à faire.    
       Elle peut prendre en arguments : la position souhaitée pour la nouvelle construction lat/lon , le rayon correspondant à la propriété ajoutée à l'exercice 1 de la Tower à construire, par exemple    
       Elle doit au minimum vérifier si aucune construction ne se trouve dans le cercle calculé    
@@ -57,12 +57,18 @@ Cet exemple s'appuie sur une Debian 8, on a installé les paquets suivants insta
       Elle doit renvoyer un booléen true/false en fonction du résultat du calcul    
     
 3. *Modifier les méthodes pour adapter aux nouvelles coordonnées*    
-    - *Tower::addTower(lat,lon)    
+    - `*Tower::addTower(lat,lon)`    
       On ajoute maintenant une tour en donnant une position lat / lon    
       Les FireTower ont un rayon de 2km, les sniperTower de 1km
     
 4. *Récupérer tous ces points et les afficher sur une carto au choix*    
-    - Ajouter une méthode ChessRedis::getAllElements() qui renvoie une liste de (par exemple) array(type=>'SniperTower','id'=>'iddelobjet',lat=>45.22,long=>4.56), ...    
+    - Ajouter une méthode `ChessRedis::getAllElements()` qui renvoie une liste de (par exemple)    
+      *array(
+        type=>'SniperTower',
+        'id'=>'iddelobjet',
+        lat=>45.22,
+        long=>4.56)*, 
+        ...    
     avec autant d'arrays que d'éléments présents    
     
     
