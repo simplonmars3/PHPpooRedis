@@ -38,5 +38,27 @@ class ChessRedis {
 
 	}
 
+function locationIsAvailable($location) {
+
+}
+
+function saveNewPiece($location, $pieceObject, $gameId) {
+
+	// Let's craft a convenient key ...
+
+	// Build correspondence type -> object list
+	$this->Redis->sadd(
+		$pieceObject->getType().':'.$gameId,
+		$pieceObject
+		) ;
+
+		// build correspondence boardCell -> availability
+		$this->Redis->set(
+			'occupiedcell:'.$gameId.':'.$location['x'].':'.$location['y'],
+			1
+			) ;
+
+
+}
 
 }

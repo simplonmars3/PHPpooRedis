@@ -63,5 +63,9 @@ class Tower implements ITower {
 		echo "Cannot reload : wrong tower type" ;
 	}
 
+	public function getType() {
+		return __CLASS__ ;
+	}
+
 
 }
