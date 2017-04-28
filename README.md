@@ -11,10 +11,12 @@ NOTE : on a ajouté le dépôt `dotdeb` pour profiter d'une version récente de 
 ```
 # On ajoute dans le fichier /etc/apt/sources.list.d/dotdeb.list                                                                                                                                                                                                                          
 deb http://packages.dotdeb.org jessie all
-deb-src http://packages.dotdeb.org jessie all                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+deb-src http://packages.dotdeb.org jessie all    
+
 # Puis on passe les commandes :                                                                                                                                                                                                                                                  
 wget https://www.dotdeb.org/dotdeb.gpg
-sudo apt-key add dotdeb.gpg                                                                                                                                                                                                                               
+sudo apt-key add dotdeb.gpg    
+
 # Puis on installe le serveur Redis à jour...    
 sudo aptitude update
 sudo aptitude install redis-server
