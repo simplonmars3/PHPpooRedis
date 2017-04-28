@@ -22,6 +22,7 @@ class ChessRedis {
 	}
 
 	function saveHash($key, $hashToSave) {
+		echo 'Savin hash !!!'. $key ;
 		return $this->Redis->hmset($key, $hashToSave) ;
 	}
 

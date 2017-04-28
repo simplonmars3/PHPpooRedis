@@ -9,25 +9,44 @@ class cGameMgt {
   private $piecesList     = [] ;
   private $toursHistory   = [] ;
   private $dates          = array('begin'=>null, 'expire'=>null) ;
+  private $redisCnx ;
 
   function __construct($boardSize = 8) {
     echo 'Constructing...' ;
+    $this->redisCnx         = new ChessRedis() ;
     $this->id               = uniqid() ;
     $this->dates['begin']   = new DateTime() ;
     $this->boardSize        = $boardSize ;
+
+    $this->redisCnx->saveHash('currentgame:'.$this->id,$this->toArray()) ;
   }
 
-  function __toString() {
-    return array(
-      'id'            => $this->id,
-      'score'         => $this->score,
-      'playersList'   => $this->playersList,
-      'piecesList'    => $this->piecesList,
-      'toursHistory'  => $this->toursHistory,
-      'dates'         => $this->dates,
-      'boardSize'     => $this->boardSize
-    ) ;
-  }
+    function toArray() {
+      return array(
+        'id'            => $this->id,
+        'score'         => $this->score,
+        // 'playersList'   => $this->playersList,
+        // 'piecesList'    => $this->piecesList,
+        // 'toursHistory'  => $this->toursHistory,
+        // 'dates'         => $this->dates,
+        'boardSize'     => $this->boardSize
+      ) ;
+    }
+
+      function __toString() {
+        // TODO Fix that !!!
+        // must return a string, array given : please serialize  !!
+
+        return json_encode(array(
+          'id'            => $this->id,
+          'score'         => $this->score,
+          // 'playersList'   => $this->playersList,
+          // 'piecesList'    => $this->piecesList,
+          // 'toursHistory'  => $this->toursHistory,
+          // 'dates'         => $this->dates,
+          'boardSize'     => $this->boardSize
+        )) ;
+      }
 
   function drawChessBoard() {
 
@@ -70,8 +89,8 @@ class cGameMgt {
 
 
     // Save this piece's location (in DB)
-    $redisCnx = new ChessRedis() ;
-    $redisCnx->saveNewPiece(
+
+    $this->redisCnx->saveNewPiece(
       $location,
       $pieceObject,
       $this->id
