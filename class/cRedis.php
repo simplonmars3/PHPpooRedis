@@ -10,10 +10,11 @@ class ChessRedis {
 		if($this->Redis) return $this->Redis ;
 
 		try {
-			$this->Redis = new Predis\Client(array(
-				'scheme' => 'unix',
-				'path' => "/var/run/redis/redis.sock"
-		)) ;
+                    $this->Redis = new Predis\Client() ;
+//                     $this->Redis = new Predis\Client(array(
+//                             'scheme' => 'unix',
+//                             'path' => "/var/run/redis/redis.sock"
+//                     )) ;
 
 			// echo 'Connected to Redis :)' ;
 
