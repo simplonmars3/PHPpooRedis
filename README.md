@@ -77,8 +77,8 @@ Pour faire court, on va :
     # au dépôt.
     php composer.phar install
 
-    # Après ça, un dossier vendor/ devrait avoir été ajouté avec à sa racine
-    # un fichier autoload.php
+    # Après ça, un dossier vendor/ devrait avoir été ajouté
+    # un fichier autoload.php avec à sa racine
     ```
 
 1.  On doit dire à git d'ignorer ces fichiers, **sur la machine locale** ; en effet c'est la copie locale qui est versionnée par git.    
@@ -131,7 +131,7 @@ Vous pouvez vous inspirer librement de la doc en ligne et des différents tutos 
 
 1. **Ajouter une propriété obligatoire aux objets Tower**    
    Les classes ont déjà des propriétés `tower_type` ou `id`. On doit leur ajouter un rayon de non-constructibilité :    
-   ellez auront besoin de ce rayon autour d'elles sans autre construction, et une fois construites elles empêcheront la construction à l'intérieur de ce rayon.    
+   elles auront besoin de ce rayon autour d'elles sans autre construction pour se construire, et une fois construites elles empêcheront la construction à l'intérieur de ce rayon.    
    Ce "rayon d'empêchement" peut être exprimé en kilomètres    
 
 2. **Passer les coordonnées en type geo dans redis et coder les méthodes :**    
