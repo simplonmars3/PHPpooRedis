@@ -1,5 +1,9 @@
-#!/usr/bin/php
 <?php
-require('class/cTour.php') ;
-echo 'youpiiiii' ;
+
+// Include dependencies
+require __DIR__ . '/vendor/autoload.php';
+
+// Include our game handler
+require 'class/cGameMgt.php' ;
+
 

@@ -1,7 +1,7 @@
 <?php
 
-require_once 'Predis/Autoloader.php' ;
-Predis\Autoloader::register() ;
+// require_once 'Predis/Autoloader.php' ;
+// Predis\Autoloader::register() ;
 
 class ChessRedis {
 	private $Redis = null ;
