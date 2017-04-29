@@ -78,7 +78,7 @@ Pour faire court, on va :
     php composer.phar install
 
     # Après ça, un dossier vendor/ devrait avoir été ajouté
-    # un fichier autoload.php avec à sa racine
+    # avec un fichier autoload.php à sa racine
     ```
 
 1.  On doit dire à git d'ignorer ces fichiers, **sur la machine locale** ; en effet c'est la copie locale qui est versionnée par git.    
@@ -95,7 +95,7 @@ Pour faire court, on va :
     ```
 
 ## PHP en mode interactif
-RAPPEL : On utilise PHP dans son mode interactif pour manipuler nos objets directement. Ainsi on procède en ligne de commande pour manipuler notre partie.    
+RAPPEL : On utilise PHP dans son mode interactif pour manipuler nos objets directement. Ainsi on procède en ligne de commande pour élaborer notre partie.    
 
 Pour démarrer et charger les librairies utiles à une partie, on charge le fichier `index.php` en mémoire dans le mode interactif dans un `php -a`. Ce fichier charge un autoloader et la classe `GameMgt`, ce qui permet d'avoir sous la main toutes les dépendances utiles à la manipulation d'une partie :    
 
