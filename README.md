@@ -74,7 +74,13 @@ Pour faire court, on va :
 
     # Après ça, un dossier vendor/ devrait avoir été ajouté avec à sa racine
     # un fichier autoload.php
+    ```
 
+1.  On doit dire à git d'ignorer ces fichiers, **sur la machine locale** ; en effet c'est la copie locale qui est versionnée par git.    
+    ```bash
+    # On se place dans le dossier du projet PHP
+    cd /home/ben/PHPpooRedis   # Adaptez selon votre config  
+    
     # On doit dire à git d'ignorer ce dossier, ainsi que le
     # fichier `composer.phar` qu'on vient d'installer
     touch .gitignore
