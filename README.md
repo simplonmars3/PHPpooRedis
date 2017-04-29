@@ -11,6 +11,8 @@ On placera les pièces par leurs coordonnées lat/long, à la la manière d'un p
 
 ## Serveur Redis
 
+Pour information seulement, on a istallé Redis ensemble en cours.
+
 > NOTE : on a ajouté le dépôt `dotdeb` pour profiter d'une version récente de Redis :    
 
 ```bash
@@ -35,6 +37,9 @@ Cet exemple s'appuie sur une Debian 8, on vient juste d'installer les paquets su
 - `redis-server`
 
 ## Librairie PHP -> Redis
+
+**A faire, puisque le paquet installé ensemble en cours est obsolète**
+
 > NOTE : On installe la lirairie `predis` via `composer`, pour avoir les features nécessaires aux exercices.    
 Ce `composer` va se servir des fichiers `composer.json` et `composer.lock` ajoutés au commit 68013b6b3bab1b66c9402d2a8ebb6564b5efe7cb    
 
@@ -80,7 +85,7 @@ Pour faire court, on va :
     ```bash
     # On se place dans le dossier du projet PHP
     cd /home/ben/PHPpooRedis   # Adaptez selon votre config  
-    
+
     # On doit dire à git d'ignorer ce dossier, ainsi que le
     # fichier `composer.phar` qu'on vient d'installer
     touch .gitignore
@@ -90,9 +95,9 @@ Pour faire court, on va :
     ```
 
 ## PHP en mode interactif
-On utilise PHP dans son mode interactif pour manipuler nos objets directement. Ainsi on procède en ligne de commande pour manipuler notre partie.    
+RAPPEL : On utilise PHP dans son mode interactif pour manipuler nos objets directement. Ainsi on procède en ligne de commande pour manipuler notre partie.    
 
-Pour démarrer et charger les librairies utiles à une partie, on charge le fichier `index.php` en mémoire dans le mode interactif dans un `php -a` :    
+Pour démarrer et charger les librairies utiles à une partie, on charge le fichier `index.php` en mémoire dans le mode interactif dans un `php -a`. Ce fichier charge un autoloader et la classe `GameMgt`, ce qui permet d'avoir sous la main toutes les dépendances utiles à la manipulation d'une partie :    
 
 ```bash
 php -a
