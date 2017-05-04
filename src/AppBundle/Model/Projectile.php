@@ -1,4 +1,5 @@
 <?php
+namespace AppBundle\Model;
 
 class Projectile {
 	var $damage ;

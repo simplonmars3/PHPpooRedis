@@ -1,10 +1,15 @@
 <?php
+namespace AppBundle\Model;
 
-require_once('cTower.php') ;
-require_once('cStoneProjectile.php') ;
+use AppBundle\Model\Tower;
+use AppBundle\Model\StoneProjectile;
+// require_once('cTower.php') ;
+// require_once('cStoneProjectile.php') ;
 
 class SniperTower extends Tower {
 	var $type = 'sniper' ;
+	var $action_radius = 50 ;
+
 
 	function __construct() {
 		parent::__construct() ;
@@ -12,7 +17,7 @@ class SniperTower extends Tower {
 	}
 
 	function shoot($projectiles_count, $projectiles_type){
-		echo "Actually shooting ".$projectiles_count." projectiles (".$projectiles_type.")" ;
+		// echo "Actually shooting ".$projectiles_count." projectiles (".$projectiles_type.")" ;
 		if($this->reserve) $this->reserve ;
 	}
 
@@ -24,7 +29,7 @@ class SniperTower extends Tower {
 			$count++ ;
 		}
 
-		echo "Actually reloading ".$projectiles_count." projectiles (".$projectiles_type.")" ;
+		// echo "Actually reloading ".$projectiles_count." projectiles (".$projectiles_type.")" ;
 //		$this->reserve += $projectiles_count ;
 	}
 

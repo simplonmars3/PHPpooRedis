@@ -1,11 +1,15 @@
 <?php
-require_once('iTower.php') ;
+namespace AppBundle\Model;
+
+use AppBundle\Model\ITower;
+// require_once('iTower.php') ;
 
 class Tower implements ITower {
 	var $id ;
 	var $position;
 	var $tower_type;
 	var $reserve = [] ;
+	var $action_radius = 12 ;
 	private $_prop_unreachable ;
 
 	// _
@@ -25,16 +29,17 @@ class Tower implements ITower {
 	function __construct($position=null,$type=null) {
 		$this->position 	= $position ;
 		$this->tower_type 	= $type ;
-		echo 'je suis en train de me faire construire' ;
+		$this->id = uniqid() ;
+		// echo 'je suis en train de me faire construire' ;
 	}
 
 
 	function __destruct() {
-		echo 'je suis en train de me faire détruire !! Aaaaaargh !!' ;
+		// echo 'je suis en train de me faire détruire !! Aaaaaargh !!' ;
 	}
 
 	function __toString() {
-		echo 'converting to string...' ;
+		// echo 'converting to string...' ;
 		return print_r($this, true) ;
 	}
 
@@ -67,5 +72,7 @@ class Tower implements ITower {
 		return __CLASS__ ;
 	}
 
-
+	public function getId() {
+		return $this->id ;
+	}
 }
